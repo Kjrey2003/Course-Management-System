@@ -1,6 +1,4 @@
-import java.text.*;
 import java.io.*;
-import java.io.IOException;
 public class Payroll  {
    private int hours;
    private String employee;
@@ -8,23 +6,17 @@ public class Payroll  {
    private double finalPay;
    File myFile = new File("Payroll.txt");
    
-    
+    //method to write the payroll data into a file, not completed yet
    public void fileWrite(double pay) throws IOException{
      
    FileWriter payroll = new FileWriter(myFile, true);
     payroll.write(Double.toString(pay));
-   BufferedWriter outStream = new BufferedWriter(new FileWriter("encoded.txt", true));
+  // BufferedWriter outStream = new BufferedWriter(new FileWriter("encoded.txt", true));
     payroll.close();
    
+}
    
-
-
-   }
-   
-
-   
-
-
+//setters
    public void setemployee(String employeeName){
         employee = employeeName;
     }
@@ -44,6 +36,7 @@ public class Payroll  {
         finalPay = fp;
     }
 
+    //getters
     public String getEmployee(){
         return employee;
     }
@@ -73,11 +66,9 @@ public Payroll(){
 
     
 }
-
+//does the calculation and adds the data to the file
 public void grossPay() throws IOException{
-    DecimalFormat df = new DecimalFormat("0.00");
-
-    double hr = getHours();
+  double hr = getHours();
     double rate = getPayRate();
 
     double gp  = hr * rate;
