@@ -38,6 +38,9 @@ class Java {
             }
 
         }
+        // Made a class that would take an appointment system between teacher and student.
+        //Used Scanner to help create communication between the two
+        //I then Used a switch statement to test the equality of the variables.
 
     }
 }
